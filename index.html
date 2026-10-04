@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orjun Kumar Paul - Portfolio</title>
+<meta name="description" content="Portfolio of Orjun Kumar Paul, EEE graduate from BUET (Communication & Signal Processing).">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f7;--pn:#fff;--tx:#0e1a24;--mu:#566472;--ac:#0a7d78;--am:#d98e04;--bd:#d9e0e6;--tg:#e3f1f0}
+:root[data-theme=dark]{--bg:#0b1218;--pn:#121c25;--tx:#e6edf2;--mu:#8fa0ae;--ac:#35d0c3;--am:#f2b84b;--bd:#233240;--tg:#14282b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font:16px/1.65 Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--tx)}
+h1,h2,h3,.logo{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.01em}
+a{color:var(--ac)}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--am);outline-offset:2px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--am);z-index:30}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:20px;padding:12px 5vw;flex-wrap:wrap}
+.logo{font-weight:700;margin-right:auto;font-size:18px}nav a{color:var(--tx);text-decoration:none;font-size:14px}nav a:hover{color:var(--ac)}
+button,.btn{font:inherit;cursor:pointer}
+button.sm{background:var(--pn);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:5px 11px}
+main{max-width:1080px;margin:auto;padding:0 5vw}
+section{padding:56px 0 8px}
+h2{font-size:30px;margin:0 0 6px}.sub{color:var(--mu);margin:0 0 24px;max-width:60ch}
+.hero{position:relative;min-height:78vh;display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:center;padding:40px 0}
+#wave{position:absolute;left:50%;transform:translateX(-50%);width:100vw;height:100%;z-index:-1;opacity:.55}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.04;margin:0 0 14px}
+.role{font-family:"Space Grotesk";font-size:20px;color:var(--ac);min-height:30px;margin:0 0 14px}
+.role:after{content:"";display:inline-block;width:2px;height:1em;background:var(--am);margin-left:3px;vertical-align:-2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.ab{max-width:62ch;color:var(--mu)}
+.btn{display:inline-block;margin:12px 10px 0 0;padding:10px 20px;border-radius:8px;border:1.5px solid var(--ac);font-weight:600;text-decoration:none;color:var(--ac);background:transparent}
+.btn.p{background:var(--ac);color:var(--bg)}
+.me{text-align:center}
+.av{width:210px;height:210px;margin:0 auto 12px;border-radius:50% 50% 50% 8px;background:var(--tg);color:var(--ac);display:flex;align-items:center;justify-content:center;font:700 56px "Space Grotesk";overflow:hidden;border:2px solid var(--ac)}
+.av img{width:100%;height:100%;object-fit:cover}
+.me small{color:var(--mu)}
+.stats{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px}
+.stats div{border-left:3px solid var(--am);padding-left:12px}.stats b{display:block;font:700 28px "Space Grotesk"}.stats span{font-size:13px;color:var(--mu)}
+.tags span{display:inline-block;background:var(--tg);color:var(--ac);border-radius:6px;padding:2px 10px;margin:3px 4px 3px 0;font-size:13px;font-weight:500}
+.rows>div{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--bd)}
+.rows b{font:700 15px "Space Grotesk";color:var(--ac)}.rows h3{margin:0 0 2px;font-size:19px}.meta{color:var(--mu);font-size:14.5px}
+.tl{border-left:2px solid var(--bd);margin-left:6px}
+.tl>div{position:relative;padding:0 0 22px 24px}.tl>div:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--am)}
+.tl h3{margin:0;font-size:18px}.tl b{font-size:13px;color:var(--ac)}
+.th{background:var(--pn);border:1px solid var(--bd);border-left:5px solid var(--ac);border-radius:4px 14px 14px 4px;padding:22px 24px;margin-bottom:16px}
+.th h3{margin:0 0 8px;font-size:21px}.th .res{font-weight:600;color:var(--ac)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chips button{background:var(--pn);color:var(--tx);border:1px solid var(--bd);border-radius:99px;padding:4px 14px;font-size:13px}
+.chips button.on{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+.chips input{flex:1;min-width:160px;border:1px solid var(--bd);background:var(--pn);color:var(--tx);border-radius:99px;padding:4px 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+.pc{background:var(--pn);border:1px solid var(--bd);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.pc:hover{transform:translateY(-4px);border-color:var(--ac)}
+.pimg{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--tg),var(--bd));color:var(--ac);font:700 34px "Space Grotesk";display:flex;align-items:center;justify-content:center}
+.pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pb{padding:16px 18px 18px}.pb h3{margin:0 0 6px;font-size:17px;line-height:1.3}.yr{float:right;color:var(--mu);font-size:13px;margin-left:8px}
+.pb p{margin:6px 0;font-size:14.5px}.links a{margin-right:14px;font-size:14px;font-weight:600}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}.gal figure{margin:0}.gal .pimg{border-radius:10px;overflow:hidden}.gal figcaption{font-size:14px;color:var(--mu);margin-top:6px}
+.ct{background:var(--pn);border:1px solid var(--bd);border-radius:12px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.ct form{display:grid;gap:10px}.ct input,.ct textarea{width:100%;font:inherit;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:8px;padding:9px 12px}
+footer{text-align:center;color:var(--mu);padding:34px 0;margin-top:50px;border-top:1px solid var(--bd);font-size:14px}
+footer a{color:var(--mu);cursor:pointer}
+#top{position:fixed;right:18px;bottom:18px;display:none;z-index:15}
+/* admin */
+#adm{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--pn);border-left:1px solid var(--bd);z-index:40;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}
+#adm.open{transform:none}
+#adm .hd{padding:12px 14px;border-bottom:1px solid var(--bd);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+#adm .hd b{margin-right:auto;font-family:"Space Grotesk"}
+#adm .tabs{display:flex;gap:4px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--bd)}
+#adm .tabs button.on{background:var(--ac);color:var(--bg)}
+#adm .bd{overflow:auto;padding:14px;flex:1}
+#adm label{display:block;font-size:12.5px;color:var(--mu);margin:8px 0}
+#adm input,#adm textarea{display:block;width:100%;margin-top:3px;font:14px Inter,sans-serif;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:6px;padding:7px 9px}
+#adm .it{border:1px solid var(--bd);border-radius:10px;padding:8px 12px;margin-bottom:12px}
+#adm .it .ac{display:flex;gap:6px;align-items:center}#adm .it .ac b{margin-right:auto;font-size:14px}
+#adm .note{font-size:12.5px;color:var(--mu);margin:0 0 10px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:8px 16px;border-radius:8px;z-index:50;display:none;font-size:14px}
+
+:root,:root[data-theme=dark]{--tg:color-mix(in srgb,var(--ac) 14%,var(--pn))}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:48px 48px;opacity:.4;mask-image:radial-gradient(circle at 50% 25%,#000,transparent 75%);-webkit-mask-image:radial-gradient(circle at 50% 25%,#000,transparent 75%)}
+#glow{position:fixed;left:0;top:0;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,color-mix(in srgb,var(--ac) 20%,transparent),transparent 65%)}
+h2:after{content:"";display:block;width:44px;height:4px;background:var(--am);margin-top:8px;border-radius:2px}
+.ani .ch{animation:up .7s cubic-bezier(.2,.8,.2,1) both}@keyframes up{from{opacity:0;transform:translateY(46px) rotate(7deg)}}
+.ch{display:inline-block;transition:transform .2s,color .2s}.ch:hover{color:var(--ac);transform:translateY(-8px)}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--bd);background:var(--pn);border-radius:99px;padding:3px 14px;font-size:13px;margin-bottom:16px}
+.pill i{width:8px;height:8px;border-radius:50%;background:#2fbf71;animation:pl 1.6s infinite}@keyframes pl{from{box-shadow:0 0 0 0 #2fbf7199}to{box-shadow:0 0 0 9px transparent}}
+.me{border:1px solid var(--ac);border-radius:18px;padding:22px;background:color-mix(in srgb,var(--pn) 80%,transparent);box-shadow:0 0 50px -14px var(--ac);transition:transform .15s}
+.av{position:relative;border-radius:16px}.av:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.09) 3px 4px)}
+.mq{overflow:hidden;margin:20px 0 0;border-block:1px solid var(--bd);padding:12px 0;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq div{display:flex;gap:38px;width:max-content;animation:mq 38s linear infinite}.mq:hover div{animation-play-state:paused}
+.mq span{font:500 20px "Space Grotesk";color:var(--mu);white-space:nowrap}.mq span:nth-child(3n+1){color:var(--ac)}@keyframes mq{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s}.rv.in{opacity:1;transform:none}
+.pc{position:relative;cursor:pointer}.pc.rv{transition:opacity .55s,transform .2s,border-color .2s}.pc.in:hover{transform:translateY(-5px)}
+.pc:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .2s;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--ac) 20%,transparent),transparent 70%)}.pc:hover:after{opacity:1}
+.pc .pimg img{transition:transform .5s}.pc:hover .pimg img{transform:scale(1.07)}
+.cl{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dots{display:flex;gap:6px}.dot{width:18px;height:18px;border-radius:50%;padding:0;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--bd)}
+.ov{position:fixed;inset:0;z-index:60;background:rgba(5,10,15,.72);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}.ov.open{display:flex}
+.ov .bx{background:var(--pn);border:1px solid var(--bd);border-radius:14px;max-width:680px;width:100%;max-height:90vh;overflow:auto;animation:pop .22s}@keyframes pop{from{transform:scale(.94);opacity:0}}
+.ov .pimg{border-radius:0}.mc{padding:20px 24px 24px}.mc h2{font-size:24px;margin-bottom:10px}
+#cp .bx{max-width:520px;align-self:flex-start;margin-top:14vh}#cp input{width:100%;font:inherit;padding:15px 18px;border:0;border-bottom:1px solid var(--bd);background:transparent;color:var(--tx);outline:0}
+#cp ul{margin:0;padding:6px 0;max-height:320px;overflow:auto}#cp li{list-style:none;padding:9px 18px;cursor:pointer}#cp li.on{background:var(--tg);color:var(--ac)}
+
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:12px;overflow:hidden}
+.sg{background:var(--pn);padding:18px 20px}.sg h3{font-size:16px;margin:0 0 10px;color:var(--ac)}.sg .tags span{background:transparent;border:1px solid var(--bd);color:var(--tx)}
+.editing [data-e]{outline:1px dashed color-mix(in srgb,var(--ac) 55%,transparent);outline-offset:3px;border-radius:3px;cursor:text;min-width:2ch}
+.editing [data-e]:hover{background:var(--tg)}.editing [data-e]:focus{outline:2px solid var(--am);background:var(--tg)}
+.editing [data-e]:empty:before{content:"click to add";color:var(--mu);font-style:italic}
+.eb{float:right;margin-left:8px;font-size:12px;padding:3px 9px}.pc .eb{position:absolute;top:8px;right:8px;float:none;z-index:3}
+#etb{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:45;display:none;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--pn);border:1px solid var(--ac);border-radius:12px;padding:8px 12px;box-shadow:0 8px 30px rgba(0,0,0,.25);max-width:94vw;font-size:14px}
+#toast{bottom:auto;top:76px}
+
+.nv{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(0,0,0,.55);color:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer}.nv.l{left:10px}.nv.r{right:10px}
+.th2{display:flex;gap:8px;padding:12px 24px 0;overflow-x:auto}.th2 img{width:84px;height:56px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.55;border:2px solid transparent;flex:none}.th2 img.on{opacity:1;border-color:var(--ac)}
+.bdg{position:absolute;left:8px;bottom:8px;z-index:2;background:rgba(0,0,0,.65);color:#fff;font:500 12px Inter,sans-serif;padding:2px 10px;border-radius:99px}
+.mth{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}.mth span{position:relative}.mth img{width:64px;height:44px;object-fit:cover;border-radius:6px;background:var(--bd)}.mth button{position:absolute;top:-6px;right:-6px;padding:0 6px;font-size:11px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.me{order:-1}.av{width:140px;height:140px}.rows>div{grid-template-columns:1fr;gap:4px}.ct{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"></nav>
+<main id="app"></main>
+<footer>&copy; 2026 <span id="fn"></span> &nbsp;|&nbsp; <a id="al">Admin</a></footer>
+<button class="sm" id="top" onclick="scrollTo({top:0})" aria-label="Back to top">Top</button>
+<div id="glow"></div>
+<div id="md" class="ov" onclick="if(event.target==this)cls()"><div class="bx"></div></div>
+<div id="cp" class="ov" onclick="if(event.target==this)cls()"><div class="bx"><input placeholder="Jump to a section or project" oninput="cpR(this.value)" aria-label="Search"><ul></ul></div></div>
+<div id="etb"><span>Editing mode: click any text on the page to change it.</span><button class="sm" onclick="openAt('profile',null)">Profile and photo</button><button class="sm" onclick="pub()">Publish</button><button class="sm" onclick="exp()">Download data.json</button><button class="btn p" style="margin:0;padding:5px 14px" onclick="setEd(false)">Done</button></div>
+<aside id="adm" aria-label="Content editor"></aside>
+<div id="toast"></div>
+
+<script>
+/* ============ PASSCODE for the Admin editor (change it!) ============ */
+const PASS="WebA8r6j2u4Nsite";
+/* ============ DEFAULT CONTENT (used if no data.json / no saved edits) ============ */
+const D0={
+profile:{name:"Orjun Kumar Paul",roles:["EEE graduate, BUET","Deep learning for signals","Edge AI and embedded systems","Communication and Signal Processing"],
+about:"Electrical and Electronic Engineering graduate from BUET (major in Communication and Signal Processing). I work at the intersection of deep learning, signal processing and embedded systems, building intelligent systems that run on real hardware, from a frequency-domain neural network for semiconductor defect detection to an edge-AI assistive robot for Bangla sign language.",
+photo:"profile.jpg",cv:"cv.pdf",email:"arjun42680@gmail.com",instEmail:"2006186@eee.buet.ac.bd",phone:"+880 1716983250",location:"Dhaka, Bangladesh",linkedin:"",github:"",
+stats:[["3.57","CGPA out of 4.00, BUET"],["0.9991","AUC-ROC of FCAN thesis model"],["",""]],
+skills:["Python","C++","MATLAB","SystemVerilog","TensorFlow","TFLite","OpenCV","YOLO","CNN/LSTM/GRU","STM32","ESP32","Raspberry Pi","Arduino","Simulink","PSpice","Proteus","AutoCAD","PCB Design"],
+openTo:"Open to opportunities in ICT, telecom, AI and embedded systems.",status:"Open to opportunities"},
+education:[
+{year:"2026",title:"Bangladesh University of Engineering and Technology (BUET)",meta:"B.Sc. in Electrical and Electronic Engineering, Major: Communication and Signal Processing. CGPA 3.57 / 4.00"},
+{year:"2020",title:"Govt. M.M. College, Jashore",meta:"Higher Secondary Certificate (Science), GPA 5.00 / 5.00"},
+{year:"2018",title:"Shaheed Smarani Jhanpa M.L. High School",meta:"Secondary School Certificate (Science), GPA 5.00 / 5.00"}],
+experience:[
+{year:"Nov 2025",title:"Industrial Attachment, BTCL",meta:"Bangladesh Telecommunications Company Limited. Hands-on exposure to telecommunication systems, network operations and industry engineering practices."},
+{year:"2024 - Present",title:"General Secretary, IEEE RAS BUET Student Branch Chapter",meta:"Coordinating chapter activities, events and member engagement for the Robotics and Automation Society."},
+{year:"",title:"Social Volunteer, BUET Rover Scout Group",meta:""},
+{year:"",title:"Awards",meta:"BUET Technical Scholarship; Talent Pool Scholarship (Class VIII)"}],
+research:[{year:"2025 - 2026",title:"Frequency Channel Adaptive Network (FCAN) for Silicon Wafer Defect Detection and Classification",
+desc:"A novel deep learning architecture on a ResNet50V2 backbone with three original modules: Spectral Feature Learning (2D FFT and radial Power Spectral Density), Frequency-Guided Cross-Attention, and Multi-Scale Feature Fusion with dilated convolutions. A custom Adaptive Multi-Label Focal Loss handles severe class imbalance, and a mixed-defect synthesis paradigm expands the training data.",
+result:"AUC-ROC 0.9991 and Macro F1 0.9916 on WM-811K and MixedWM38, outperforming 14 published baselines.",tags:["PyTorch/TensorFlow","Attention","FFT","Multi-label Classification"],supervisor:"Dr. Mohammed Imamul Hassan Bhuiyan, Professor, EEE, BUET"}],
+projects:[
+{title:"Intelligent Personal Assistive Robot for Emergency Awareness and Communication Support",year:"2026",img:"images/assistive-robot.jpg",desc:"Bangla sign-language-to-voice and voice-to-text robot on Raspberry Pi Zero 2W and ESP32-S3, using an INT8-quantized MobileNetV2 (~610 KB). 100% test accuracy, under 2 s latency, fire-gesture alert, 18,000 BDT build cost.",role:"Core member of a 5-person team: system design, implementation and testing.",tags:["Edge AI","TFLite","NLP","Robotics"],links:[["GitHub","https://github.com/SabbirWitcher/Personal-Assistive-Robot"]]},
+{title:"Electrical Services Design of an 11-Storied Residential Building",year:"2026",img:"images/esd.jpg",desc:"Conduit layouts, switchboard diagrams, load schedules, generator/transformer ratings and lightning protection for a basement + ground + 9 floor building.",role:"Member of a 7-person team: layouts, load calculations and drawings.",tags:["AutoCAD","Load Calculation","Protection"],links:[]},
+{title:"Stock Market Prediction with Sentiment Analysis",year:"2025",img:"images/stock-prediction.jpg",desc:"Fused daily news sentiment with technical indicators to predict Google's closing price; benchmarked LSTM, GRU, ANN and regressors. Best GRU reached R\u00b2 = 0.9515.",role:"Collected and aligned datasets; built the sentiment pipeline.",tags:["LSTM","GRU","TextBlob","VADER"],links:[["GitHub","https://github.com/navin2006190/Stock_market_prediction_with_sentiment_analysis"]]},
+{title:"IoT-Based Smart Poultry Farm Automation",year:"2025",img:"images/poultry-farm.jpg",desc:"ESP32 system monitoring temperature, humidity, gas, light, water and feed, with automatic control and Blynk app override.",role:"Hardware design, circuit implementation and debugging.",tags:["ESP32","Blynk","IoT","Sensors"],links:[]},
+{title:"Fire Fighter Robot Based on Image Processing",year:"2024",img:"images/fire-robot.jpg",desc:"YOLO flame detection with PID steering and a servo-aimed water pump for autonomous extinguishing.",role:"Chassis, assembly, water-pump section, debugging and demo.",tags:["YOLO","OpenCV","PID","Arduino"],links:[]},
+{title:"BLDC Motor Driver (DC to 3-Phase AC)",year:"2024",img:"images/bldc-driver.jpg",desc:"Six-step commutation with a three-phase MOSFET inverter, opto-isolated gate drivers and a discrete 5 V regulator.",role:"Proteus schematic, driver implementation, regulator debugging.",tags:["Power Electronics","Arduino","MOSFET"],links:[]},
+{title:"Simulink-Based Power System Dynamic Analysis",year:"2024",img:"images/power-system.jpg",desc:"IEEE 9-bus load flow and overcurrent-relay study under LG, LL, LLG and LLLG faults, plus MATLAB generator, excitation and turbine models.",role:"Prepared the MATLAB code for dynamic models and transient analysis.",tags:["MATLAB","Simulink","Protection"],links:[]},
+{title:"Digital Attendance System by Face Detection",year:"2024",img:"images/face-attendance.jpg",desc:"Real-time webcam recognition (HOG + SVM) that logs attendance to Excel with email notification.",role:"Coding, recognition module and debugging.",tags:["MATLAB","HOG","SVM"],links:[]},
+{title:"IoT-Based Smart Door Lock System",year:"2024",img:"images/door-lock.jpg",desc:"Wi-Fi lock on NodeMCU ESP8266 with remote control, access logging and notifications via a cloud database.",role:"PCB design and firmware.",tags:["ESP8266","IoT","PCB"],links:[]},
+{title:"8-Player Quiz Buzzer System",year:"2024",img:"images/quiz-buzzer.jpg",desc:"Microcontroller-free design using priority encoder and latches for first-responder lock-out, scoring and a 9 s timer.",role:"Circuit design, implementation and testing (4-person team).",tags:["74-series ICs","555 Timer"],links:[]},
+{title:"Amplitude Modulation and Demodulation",year:"2023",img:"images/am-modulation.jpg",desc:"DSB chain with quadrature-oscillator carrier, diode-ring multiplier, narrow band-pass and Butterworth low-pass filters, verified in time and frequency domain.",role:"Co-designed and simulated all sub-circuits (2-person team).",tags:["PSpice","Op-amps","Filters"],links:[]},
+{title:"Heat Conduction Simulation",year:"2023",img:"images/heat-conduction.jpg",desc:"GUI solver for 1D/2D/3D steady-state heat conduction using the finite difference method.",role:"Co-developed the solver and GUI (2-person team).",tags:["MATLAB","App Designer","FDM"],links:[]}],
+skillGroups:[{title:"Programming",items:["Python","C++","MATLAB","SystemVerilog"]},{title:"AI and vision",items:["TensorFlow","TFLite","OpenCV","YOLO","CNN/LSTM/GRU"]},{title:"Embedded and IoT",items:["STM32","ESP32","Raspberry Pi","Arduino"]},{title:"Simulation and design",items:["Simulink","PSpice","Proteus","AutoCAD","PCB Design"]}],
+gallery:[]};
+
+let D=D0,F="All",Q="",T="profile",rt,tm;
+const $=s=>document.querySelector(s),esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ini=t=>t.split(" ").filter(w=>/^[A-Za-z]/.test(w)).slice(0,2).map(w=>w[0].toUpperCase()).join("");
+const toast=m=>{const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(tm);tm=setTimeout(()=>t.style.display="none",2600)};
+const img=(src,alt)=>src?`<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" onerror="this.remove()">`:"";
+
+async function load(){let l=null;try{l=JSON.parse(localStorage.getItem("pf"))}catch(e){}
+ if(l){D=l;return}
+ try{const r=await fetch("data.json",{cache:"no-store"});if(r.ok)D=await r.json()}catch(e){}}
+
+function render(){const p=D.profile,pr=D.projects||[];
+ document.title=p.name+" - Portfolio";$("#fn").textContent=p.name;
+ const S=[["about","About"],["skills","Skills"],["education","Education"],["experience","Experience"],["research","Research"],["projects","Projects"],(D.gallery||[]).length?["gallery","Gallery"]:null,["contact","Contact"]].filter(Boolean);
+ $("#nav").innerHTML=`<span class="logo">${esc(p.name)}</span>${S.map(s=>`<a href="#${s[0]}">${s[1]}</a>`).join("")}${p.cv?`<a href="${esc(p.cv)}">CV</a>`:""}<button class="sm" onclick="cpOpen()" aria-label="Search">Search Ctrl+K</button><span class="dots">${PAL.map((c,i)=>`<button class="dot" aria-label="Accent ${i+1}" style="background:${c?c[0]:"#0a7d78"}" onclick="acc(${i})"></button>`).join("")}</span><button class="sm" id="t" aria-label="Toggle dark mode">${document.documentElement.dataset.theme=="dark"?"Light":"Dark"}</button>`;
+ $("#t").onclick=()=>setTheme(document.documentElement.dataset.theme=="dark"?"light":"dark");
+ const tags=["All",...new Set(pr.flatMap(x=>x.tags||[]))];
+ const list=pr.filter(x=>(F=="All"||(x.tags||[]).includes(F))&&(!Q||JSON.stringify(x).toLowerCase().includes(Q)));
+ $("#app").innerHTML=`
+<section id="about" class="hero"><canvas id="wave"></canvas>
+<div>${p.status||ED?`<div class="pill"><i></i><span ${E("profile.status")}>${esc(p.status)}</span></div>`:""}<h1 ${ED?E("profile.name"):`class="${first?"ani":""}" aria-label="${esc(p.name)}"`}>${ED?esc(p.name):[...p.name].map((c,i)=>`<span class="ch" aria-hidden="true" style="animation-delay:${i*45}ms">${c==" "?"&nbsp;":esc(c)}</span>`).join("")}</h1><div class="role" id="role"></div><p class="ab" ${E("profile.about")}>${esc(p.about)}</p>
+
+${p.cv?`<a class="btn p" href="${esc(p.cv)}">Download CV</a>`:""}<a class="btn" href="#projects">View projects</a>${p.github?`<a class="btn" href="${esc(p.github)}" target="_blank" rel="noopener">GitHub</a>`:""}${p.linkedin?`<a class="btn" href="${esc(p.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`:""}
+<div class="stats">${(p.stats||[]).map((s,i)=>`<div><b ${E('profile.stats.'+i+'.0')}>${esc(s[0])}</b><span ${E('profile.stats.'+i+'.1')}>${esc(s[1])}</span></div>`).join("")}</div></div>
+<aside class="me"><div class="av">${img(p.photo,p.name)||""}</div><b>${esc(p.name)}</b><br><small ${E("profile.location")}>${esc(p.location)}</small></aside></section>
+<section id="skills"><h2>Technical skills</h2><p class="sub">Tools and technologies, grouped by area.</p><div class="sk">${(D.skillGroups||[]).map((g,i)=>`<div class="sg">${eb('skillGroups',i)}<h3 ${E('skillGroups.'+i+'.title')}>${esc(g.title)}</h3>${ED?`<div class="meta" data-t="1" ${E('skillGroups.'+i+'.items')}>${esc((g.items||[]).join(", "))}</div>`:`<div class="tags">${(g.items||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>`}</div>`).join("")}</div></section>
+<section id="education"><h2>Education</h2><p class="sub">Academic background.</p><div class="rows">${(D.education||[]).map((e,i)=>`<div><b ${E('education.'+i+'.year')}>${esc(e.year)}</b><div>${eb('education',i)}<h3 ${E('education.'+i+'.title')}>${esc(e.title)}</h3><div class="meta" ${E('education.'+i+'.meta')}>${esc(e.meta)}</div></div></div>`).join("")}</div></section>
+<section id="experience"><h2>Experience and leadership</h2><p class="sub">Industry exposure, activities and awards.</p><div class="tl">${(D.experience||[]).map((e,i)=>`<div>${eb('experience',i)}${e.year||ED?`<b ${E('experience.'+i+'.year')}>${esc(e.year)}</b>`:""}<h3 ${E('experience.'+i+'.title')}>${esc(e.title)}</h3><div class="meta" ${E('experience.'+i+'.meta')}>${esc(e.meta)}</div></div>`).join("")}</div></section>
+<section id="research"><h2>Research and thesis</h2><p class="sub">Undergraduate thesis work.</p>${(D.research||[]).map((r,i)=>`<div class="th">${eb('research',i)}<span class="yr" ${E('research.'+i+'.year')}>${esc(r.year)}</span><h3 ${E('research.'+i+'.title')}>${esc(r.title)}</h3>${r.supervisor||ED?`<div class="meta">Supervisor: <span ${E('research.'+i+'.supervisor')}>${esc(r.supervisor)}</span></div>`:""}<p ${E('research.'+i+'.desc')}>${esc(r.desc)}</p>${r.result||ED?`<p class="res" ${E('research.'+i+'.result')}>${esc(r.result)}</p>`:""}<div class="tags">${(r.tags||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div></div>`).join("")}</section>
+<section id="projects"><h2>Projects</h2><p class="sub">Academic and lab projects, newest first. Filter by technology or search.</p>
+<div class="chips">${tags.map(t=>`<button class="${t==F?"on":""}" onclick="F=this.textContent;render()">${esc(t)}</button>`).join("")}<input id="q" placeholder="Search projects" value="${esc(Q)}" aria-label="Search projects"></div>
+<div class="grid">${list.map(x=>`<article class="pc" data-i="${pr.indexOf(x)}" tabindex="0" onclick="proj(${pr.indexOf(x)})" onkeydown="if(event.key=='Enter')proj(${pr.indexOf(x)})"><div class="pimg">${esc(ini(x.title))}${img(x.img,x.title)}</div><div class="pb">${eb('projects',pr.indexOf(x))}<span class="yr" ${E('projects.'+pr.indexOf(x)+'.year')}>${esc(x.year)}</span><h3 ${E('projects.'+pr.indexOf(x)+'.title')}>${esc(x.title)}</h3><p class="${ED?"":"cl"}" ${E('projects.'+pr.indexOf(x)+'.desc')}>${esc(x.desc)}</p>${ED?`<p><b>My contribution:</b> <span ${E('projects.'+pr.indexOf(x)+'.role')}>${esc(x.role)}</span></p>`:""}<div class="tags">${(x.tags||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div><div class="links" onclick="event.stopPropagation()">${(x.links||[]).map(l=>`<a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join("")}</div></div></article>`).join("")||`<p class="meta">No project matches. Clear the search or pick another filter.</p>`}</div></section>
+${(D.gallery||[]).length?`<section id="gallery"><h2>Photo gallery</h2><p class="sub">Moments from projects, events and milestones.</p><div class="gal">${D.gallery.map(g=>`<figure><div class="pimg">${img(g.img,g.title)}</div><figcaption><b>${esc(g.title)}</b><br>${esc(g.caption)}</figcaption></figure>`).join("")}</div></section>`:""}
+<section id="contact"><h2>Contact</h2><p class="sub" ${E("profile.openTo")}>${esc(p.openTo)}</p><div class="ct"><div><p><b>Email:</b> <a ${ED?"":`href="mailto:${esc(p.email)}"`} ${E("profile.email")}>${esc(p.email)}</a><br><b>Institutional:</b> <span ${E("profile.instEmail")}>${esc(p.instEmail)}</span><br><b>Phone:</b> <span ${E("profile.phone")}>${esc(p.phone)}</span><br><b>Location:</b> <span ${E("profile.location")}>${esc(p.location)}</span></p></div>
+<form onsubmit="return mail(this)"><input name="n" placeholder="Your name" required><textarea name="m" rows="4" placeholder="Your message" required></textarea><button class="btn p" style="margin:0">Send email</button></form></div></section>`;
+ const q=$("#q");q.oninput=()=>{Q=q.value.toLowerCase();clearTimeout(rt);rt=setTimeout(()=>{render();const n=$("#q");n.focus();n.setSelectionRange(99,99)},250)};
+ role();wave();post()}
+function mail(f){location.href=`mailto:${D.profile.email}?subject=${encodeURIComponent("Message from "+f.n.value)}&body=${encodeURIComponent(f.m.value)}`;return false}
+
+/* typing roles */
+let rti;function role(){clearInterval(rti);const el=$("#role"),R=D.profile.roles&&D.profile.roles.length?D.profile.roles:[""];let i=0,c=0,d=0;
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.textContent=R[0];return}
+ rti=setInterval(()=>{const w=R[i%R.length];c+=d?-1:1;el.textContent=w.slice(0,c);if(!d&&c>=w.length){d=1;c=w.length+12}if(d&&c<=0){d=0;i++}},70)}
+
+/* hero signal: sum of sines, frequency follows the pointer */
+let raf,fx=.5;addEventListener("pointermove",e=>fx=e.clientX/innerWidth);
+function wave(){cancelAnimationFrame(raf);const c=$("#wave"),x=c.getContext("2d");let t=0;
+ const go=()=>{const w=c.width=c.offsetWidth,h=c.height=c.offsetHeight,cs=getComputedStyle(document.documentElement);x.clearRect(0,0,w,h);
+  [[cs.getPropertyValue("--ac"),1,.9],[cs.getPropertyValue("--am"),2.3,.45]].forEach(([col,k,a],j)=>{x.beginPath();x.strokeStyle=col;x.lineWidth=2;
+   for(let i=0;i<=w;i+=4){const u=i/w,y=h*.5+Math.sin(u*(6+fx*14)*k+t*k)*h*.12*a+Math.sin(u*3*k-t*.6)*h*.08*a*(j?1:1.4);i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke()});
+  t+=.02;if(!matchMedia("(prefers-reduced-motion:reduce)").matches)raf=requestAnimationFrame(go)};go()}
+
+function setTheme(m){document.documentElement.dataset.theme=m;paint();try{localStorage.setItem("th",m)}catch(e){}const b=$("#t");if(b)b.textContent=m=="dark"?"Light":"Dark"}
+let th=null;try{th=localStorage.getItem("th")}catch(e){}
+document.documentElement.dataset.theme=th||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+addEventListener("scroll",()=>{const h=document.documentElement;$("#bar").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";$("#top").style.display=h.scrollTop>600?"block":"none"});
+
+/* ================= ADMIN EDITOR ================= */
+const SC={
+profile:[["name","Full name"],["roles","Typing headline lines (comma separated)","t"],["about","About me","a"],["photo","Profile photo","i"],["cv","CV file path (e.g. cv.pdf)"],["email","Email"],["instEmail","Institutional email"],["phone","Phone"],["location","Location"],["linkedin","LinkedIn URL"],["github","GitHub URL"],["status","Availability badge (empty to hide)"],["openTo","Contact line","a"],["stats","Highlight numbers (one per line: value|label)","l"]],
+education:[["year","Year"],["title","Institution"],["meta","Details","a"]],
+experience:[["year","Date"],["title","Title"],["meta","Details","a"]],
+research:[["year","Years"],["title","Title"],["supervisor","Supervisor"],["desc","Description","a"],["result","Result","a"],["tags","Tags (comma separated)","t"]],
+projects:[["title","Title"],["year","Year"],["img","Cover image","i"],["imgs","More photos","m"],["desc","Description","a"],["role","My contribution","a"],["tags","Tags (comma separated)","t"],["links","Links (one per line: Name|https://...)","l"]],
+gallery:[["img","Photo","i"],["title","Title"],["caption","Caption"]],
+skillGroups:[["title","Category"],["items","Skills (comma separated)","t"]]};
+const TL={profile:"Profile",skillGroups:"Skills",education:"Education",experience:"Experience",research:"Research",projects:"Projects",gallery:"Gallery"};
+const BL={skillGroups:{title:"New category",items:[]},education:{year:"",title:"New item",meta:""},experience:{year:"",title:"New item",meta:""},research:{year:"",title:"New thesis",supervisor:"",desc:"",result:"",tags:[]},projects:{title:"New project",year:new Date().getFullYear()+"",img:"",desc:"",role:"",tags:[],links:[]},gallery:{img:"",title:"New photo",caption:""}};
+const own=(s,i)=>i==null?D[s]:D[s][i];
+function fld(s,i,f){const[k,l,t]=f;
+ if(t=="m"){const a=own(s,i)[k]||[];return `<label>${l} (names like cover-2.jpg, cover-3.jpg, cover-4.jpg are found automatically)<div class="mth">${a.map((u,j)=>`<span><img src="${esc(u)}" alt="" onerror="this.style.opacity=.25"><button class="sm" type="button" onclick="rm('${s}',${i},'${k}',${j})">x</button></span>`).join("")}</div><input placeholder="Type a path like images/robot-5.jpg and press Enter" onchange="addp('${s}',${i},'${k}',this)"><input type="file" accept="image/*" multiple onchange="upm('${s}',${i},'${k}',this)"></label>`}
+ let v=own(s,i)[k];
+ const val=t=="t"?(v||[]).join(", "):t=="l"?(v||[]).map(x=>x.join("|")).join("\n"):v||"";
+ const h=`oninput="ed('${s}',${i==null?"null":i},'${k}','${t||""}',this.value)"`;
+ let n=(t=="a"||t=="t"||t=="l")?`<textarea rows="${t=="a"?4:3}" ${h}>${esc(val)}</textarea>`:`<input value="${esc(val)}" ${h}>`;
+ if(t=="i")n+=`<input type="file" accept="image/*" onchange="up('${s}',${i==null?"null":i},'${k}',this)">`;
+ return `<label>${l}${n}</label>`}
+function ed(s,i,k,t,v){own(s,i)[k]=t=="t"?v.split(",").map(x=>x.trim()).filter(Boolean):t=="l"?v.split("\n").filter(x=>x.includes("|")).map(x=>x.split("|").map(y=>y.trim())):v;save();clearTimeout(rt);rt=setTimeout(render,400)}
+function up(s,i,k,inp){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const m=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*m;c.height=im.height*m;c.getContext("2d").drawImage(im,0,0,c.width,c.height);own(s,i)[k]=c.toDataURL("image/jpeg",.8);save();render();adm();toast("Photo added. For many photos, upload files to the images folder and type the path instead.")};im.src=r.result};r.readAsDataURL(f)}
+function save(){try{localStorage.setItem("pf",JSON.stringify(D))}catch(e){toast("Browser storage is full. Use image paths instead of uploads.")}}
+function adm(){const a=$("#adm"),open=a.classList.contains("open");
+ const body=T=="profile"?SC.profile.map(f=>fld("profile",null,f)).join(""):
+  `<button class="sm" onclick="add('${T}')">+ Add new</button><div style="height:12px"></div>`+D[T].map((it,i)=>`<div class="it"><div class="ac"><b>${esc(it.title||"Item "+(i+1))}</b><button class="sm" onclick="mv('${T}',${i},-1)" aria-label="Move up">Up</button><button class="sm" onclick="mv('${T}',${i},1)" aria-label="Move down">Down</button><button class="sm" onclick="del('${T}',${i})">Delete</button></div>${SC[T].map(f=>fld(T,i,f)).join("")}</div>`).join("");
+ a.innerHTML=`<div class="hd"><b>Edit site</b><button class="sm" onclick="exp()">Download data.json</button><button class="sm" onclick="pub()">Publish</button><button class="sm" onclick="$('#imp').click()">Import</button><button class="sm" onclick="rst()">Reset</button><button class="sm" onclick="$('#adm').classList.remove('open')">Close</button><input id="imp" type="file" accept=".json" hidden onchange="imp(this)"></div>
+<div class="tabs">${Object.keys(TL).map(k=>`<button class="sm ${k==T?"on":""}" onclick="T='${k}';adm()">${TL[k]}</button>`).join("")}</div>
+<div class="bd"><p class="note">Changes show instantly and are saved in this browser. To make them live for everyone, click Publish, or download data.json and upload it next to index.html.</p>${body}</div>`;
+ if(!open)requestAnimationFrame(()=>a.classList.add("open"))}
+function add(s){D[s].unshift(JSON.parse(JSON.stringify(BL[s])));save();render();adm()}
+function del(s,i){if(confirm("Delete this item?")){D[s].splice(i,1);save();render();adm()}}
+function mv(s,i,d){const j=i+d,a=D[s];if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];save();render();adm()}
+function exp(){const b=new Blob([JSON.stringify(D,null,1)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="data.json";a.click();toast("Downloaded. Upload it next to index.html to publish.")}
+function imp(i){const f=i.files[0];if(!f)return;f.text().then(t=>{try{D=JSON.parse(t);save();render();adm();toast("Imported")}catch(e){toast("That file is not valid JSON.")}})}
+function rst(){if(confirm("Discard your saved edits in this browser and reload the published content?")){try{localStorage.removeItem("pf")}catch(e){}location.reload()}}
+$("#al").onclick=()=>{if(prompt("Admin passcode")===PASS){setEd(true);toast("Editing mode on. Click any text to edit.")}else toast("Wrong passcode.")};
+if(location.hash=="#admin")setTimeout(()=>$("#al").click(),300);
+
+/* ================= EXTRAS: accent, reveal, modal, command palette ================= */
+const PAL=[null,["#3b5bdb","#d9480f","#8ea2ff","#ff922b"],["#c2255c","#e67700","#ff7eb0","#ffc13b"],["#2b8a3e","#c2255c","#69db7c","#ff8fab"]];
+let AC=0,first=true;try{AC=+localStorage.getItem("ac")||0}catch(e){}
+function paint(){const r=document.documentElement.style,p=PAL[AC],d=document.documentElement.dataset.theme=="dark";
+ if(!p){r.removeProperty("--ac");r.removeProperty("--am")}else{r.setProperty("--ac",p[d?2:0]);r.setProperty("--am",p[d?3:1])}}
+function acc(i){AC=i;try{localStorage.setItem("ac",i)}catch(e){}paint()}
+paint();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});
+function post(){badges();if(ED)document.querySelectorAll("[data-e]").forEach(el=>{el.contentEditable="plaintext-only";if(el.contentEditable!="plaintext-only")el.contentEditable="true"});document.querySelectorAll(".pc,.th,.tl>div,.rows>div").forEach(el=>{el.classList.add("rv");io.observe(el)});
+ if(first){first=false;document.querySelectorAll(".stats b").forEach(b=>{const t=b.textContent,v=parseFloat(t);if(!/^[\d.]+$/.test(t))return;const d=(t.split(".")[1]||"").length,s=performance.now();
+  (function f(n){const k=Math.min(1,(n-s)/1300);b.textContent=(v*(1-Math.pow(1-k,3))).toFixed(d);if(k<1)requestAnimationFrame(f);else b.textContent=t})(s)})}}
+async function proj(i){const x=D.projects[i];if(!x||ED)return;const all=await okImgs(x);GA=all;GI=0;
+ $("#md .bx").innerHTML=`<div class="pimg" id="mi">${esc(ini(x.title))}${img(all[0],x.title)}${all.length>1?`<button class="nv l" aria-label="Previous photo" onclick="gs(-1)">&lsaquo;</button><button class="nv r" aria-label="Next photo" onclick="gs(1)">&rsaquo;</button>`:""}</div>${all.length>1?`<div class="th2">${all.map((u,j)=>`<img class="${j?"":"on"}" src="${esc(u)}" alt="" onclick="gt(${j})">`).join("")}</div>`:""}<div class="mc"><span class="yr">${esc(x.year)}</span><h2>${esc(x.title)}</h2><p>${esc(x.desc)}</p><p><b>My contribution:</b> ${esc(x.role)}</p><div class="tags">${(x.tags||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div><div class="links">${(x.links||[]).map(l=>`<a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join("")}</div><button class="btn p" onclick="cls()">Close</button></div>`;
+ $("#md").classList.add("open")}
+function cls(){document.querySelectorAll(".ov").forEach(o=>o.classList.remove("open"))}
+let cpI=0,cpL=[];
+function cpOpen(){$("#cp").classList.add("open");const i=$("#cp input");i.value="";cpR("");i.focus()}
+function cpR(q){const all=[["about","About"],["education","Education"],["experience","Experience"],["research","Research"],["projects","Projects"],["contact","Contact"]].map(x=>({t:"Go to "+x[1],f:()=>{location.hash=x[0]}}))
+ .concat((D.projects||[]).map((x,i)=>({t:"Project: "+x.title,f:()=>proj(i)})),[{t:"Toggle dark mode",f:()=>$("#t").click()},{t:"Open admin editor",f:()=>$("#al").click()}]);
+ cpL=all.filter(a=>a.t.toLowerCase().includes(q.toLowerCase())).slice(0,8);cpI=0;
+ $("#cp ul").innerHTML=cpL.map((a,i)=>`<li class="${i?"":"on"}" onclick="cpG(${i})">${esc(a.t)}</li>`).join("")}
+function cpG(i){const a=cpL[i];if(!a)return;cls();setTimeout(a.f,60)}
+addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key=="k"){e.preventDefault();cpOpen()}
+ if(e.key=="Escape")cls();
+ if($("#cp").classList.contains("open")&&cpL.length){if(e.key=="ArrowDown"||e.key=="ArrowUp"){e.preventDefault();cpI=(cpI+(e.key=="ArrowDown"?1:-1)+cpL.length)%cpL.length;document.querySelectorAll("#cp li").forEach((l,i)=>l.classList.toggle("on",i==cpI))}if(e.key=="Enter")cpG(cpI)}});
+addEventListener("pointermove",e=>{$("#glow").style.transform=`translate(${e.clientX-210}px,${e.clientY-210}px)`;
+ const c=e.target.closest&&e.target.closest(".pc");if(c){const r=c.getBoundingClientRect();c.style.setProperty("--mx",e.clientX-r.left+"px");c.style.setProperty("--my",e.clientY-r.top+"px")}
+ const m=$(".me");if(m&&innerWidth>760){const r=m.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  m.style.transform=Math.abs(x)<1&&Math.abs(y)<1?`perspective(700px) rotateY(${x*14}deg) rotateX(${-y*14}deg)`:"none"}});
+
+/* ================= INLINE EDITING + PUBLISH ================= */
+let ED=false;
+function E(p){return `data-e="${p}"`}
+function eb(s,i){return ED?`<button class="sm eb" onclick="event.stopPropagation();openAt('${s}',${i})">Edit details</button>`:""}
+function openAt(s,i){T=s;adm();setTimeout(()=>{const n=document.querySelectorAll("#adm .it")[i];if(n)n.scrollIntoView({block:"center"})},320)}
+function setEd(on){ED=on;document.body.classList.toggle("editing",on);$("#etb").style.display=on?"flex":"none";if(!on)$("#adm").classList.remove("open");render()}
+addEventListener("input",e=>{const t=e.target.closest&&e.target.closest("[data-e]");if(!t)return;
+ const k=t.dataset.e.split("."),v=t.dataset.t?t.textContent.split(",").map(x=>x.trim()).filter(Boolean):t.textContent;
+ let o=D;for(let i=0;i<k.length-1;i++)o=o[k[i]];o[k[k.length-1]]=v;save()});
+addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.dataset&&e.target.dataset.e){e.preventDefault();e.target.blur()}});
+addEventListener("focusout",e=>{if(ED&&e.target.dataset&&e.target.dataset.e){document.title=D.profile.name+" - Portfolio";$(".logo").textContent=D.profile.name;$("#fn").textContent=D.profile.name}});
+async function pub(){let g=null;try{g=JSON.parse(localStorage.getItem("gh"))}catch(e){}
+ if(!g){const r=prompt("GitHub repository (owner/name), e.g. orjun/portfolio:");if(!r)return;const tk=prompt("GitHub fine-grained token (Contents: read and write, for this repo only):");if(!tk)return;g={r:r.trim(),tk:tk.trim()};try{localStorage.setItem("gh",JSON.stringify(g))}catch(e){}}
+ const u=`https://api.github.com/repos/${g.r}/contents/data.json`,h={Authorization:"Bearer "+g.tk,Accept:"application/vnd.github+json"};
+ try{let sha;const c=await fetch(u,{headers:h});if(c.ok)sha=(await c.json()).sha;
+  const r=await fetch(u,{method:"PUT",headers:h,body:JSON.stringify({message:"Update portfolio content",sha,content:btoa(unescape(encodeURIComponent(JSON.stringify(D,null,1))))})});
+  if(r.ok)toast("Published. It goes live in about a minute.");else{if(r.status==401||r.status==404)try{localStorage.removeItem("gh")}catch(e){}toast("Publish failed ("+r.status+"). Check the repo name and token, then try again.")}
+ }catch(e){toast("Network error. Check your connection and try again.")}}
+
+/* ================= MULTI-PHOTO PROJECTS ================= */
+const OK={};let GA=[],GI=0;
+function okImgs(x){const u=[x.img,...(x.imgs||[])].filter(Boolean),k=u.join("|");
+ return OK[k]||(OK[k]=Promise.all(u.map(s=>new Promise(r=>{const m=new Image();m.onload=()=>r(s);m.onerror=()=>r(null);m.src=s}))).then(a=>a.filter(Boolean)))}
+function badges(){(D.projects||[]).forEach((x,i)=>okImgs(x).then(a=>{if(a.length>1){const c=document.querySelector(`.pc[data-i="${i}"] .pimg`);if(c&&!c.querySelector(".bdg"))c.insertAdjacentHTML("beforeend",`<span class="bdg">${a.length} photos</span>`)}}))}
+function gt(j){GI=j;const m=$("#mi");let im=m.querySelector("img");if(!im){im=new Image();im.alt="";m.prepend(im)}im.src=GA[j];document.querySelectorAll(".th2 img").forEach((t,n)=>t.classList.toggle("on",n==j))}
+function gs(d){gt((GI+d+GA.length)%GA.length)}
+addEventListener("keydown",e=>{if($("#md").classList.contains("open")&&GA.length>1){if(e.key=="ArrowRight")gs(1);if(e.key=="ArrowLeft")gs(-1)}});
+function rm(s,i,k,j){own(s,i)[k].splice(j,1);save();render();adm()}
+function addp(s,i,k,inp){const v=inp.value.trim();if(!v)return;const o=own(s,i);(o[k]=o[k]||[]).push(v);save();render();adm()}
+function rs(f){return new Promise(r=>{const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const m=Math.min(1,900/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*m;c.height=im.height*m;c.getContext("2d").drawImage(im,0,0,c.width,c.height);r(c.toDataURL("image/jpeg",.8))};im.src=fr.result};fr.readAsDataURL(f)})}
+async function upm(s,i,k,inp){const o=own(s,i);o[k]=o[k]||[];for(const f of inp.files)o[k].push(await rs(f));save();render();adm()}
+load().then(()=>{if(!D.skillGroups)D.skillGroups=D0.skillGroups;if(D.profile.status===undefined)D.profile.status=D0.profile.status;D.projects.forEach(x=>{if(!x.imgs&&x.img)x.imgs=[2,3,4].map(n=>x.img.replace(/(\.\w+)$/,"-"+n+"$1"))});render()});
+</script>
+</body>
+</html>
